@@ -8,9 +8,8 @@ public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
 		cfg.title = "Pool";
-		cfg.width = 1280;
-		cfg.height = 720;
-//		cfg.fullscreen = true;
+		cfg.width = PoolMainClass.V_WIDTH * PoolMainClass.SCALE;
+		cfg.height = PoolMainClass.V_HEIGHT * PoolMainClass.SCALE;
 		new LwjglApplication(new PoolMainClass(), cfg);
 	}
 }
