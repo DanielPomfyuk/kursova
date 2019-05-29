@@ -4,10 +4,8 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.pool.game.Handlers.BodyData;
 
-import java.util.List;
-
-public class Wall extends GameObject{
-    public Wall(World world){
+public class Pocket extends GameObject {
+    public Pocket(World world) {
         super(world);
     }
     public Body create(Vector2[] points) {
@@ -20,7 +18,7 @@ public class Wall extends GameObject{
         FixtureDef fdef = new FixtureDef();
         fdef.shape = shape;
         body.createFixture(fdef);
-        body.setUserData(new BodyData(false,false,false,true));
+        body.setUserData(new BodyData(false,false,true,false));
         return body;
     }
 }
