@@ -17,8 +17,8 @@ public class Pocket extends GameObject {
         shape.set(points);
         FixtureDef fdef = new FixtureDef();
         fdef.shape = shape;
+        body.setUserData(new BodyData(false,false,true,false,false, Ball.BallType.NONE));
         body.createFixture(fdef);
-        body.setUserData(new BodyData(false,false,true,false));
         return body;
     }
 }

@@ -20,7 +20,7 @@ public class Wall extends GameObject{
         FixtureDef fdef = new FixtureDef();
         fdef.shape = shape;
         body.createFixture(fdef);
-        body.setUserData(new BodyData(false,false,false,true));
+        body.setUserData(new BodyData(false,false,false,true,false, Ball.BallType.NONE));
         return body;
     }
 }

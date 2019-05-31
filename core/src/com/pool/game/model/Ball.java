@@ -10,7 +10,7 @@ import com.pool.game.Handlers.BodyData;
 import static com.pool.game.Handlers.B2DVars.PPM;
 
 public class Ball extends GameObject {
-    public enum BallType {CUE,BLACK,SOLID,STRIPE}
+    public enum BallType {CUE,BLACK,SOLID,STRIPE,NONE}
     public Body body;
     public BallType ballType;
     public Sprite ballSprite;
@@ -34,7 +34,7 @@ public class Ball extends GameObject {
         this.ballSprite.setPosition(positionX,positionY);
         this.ballSprite.setBounds(ballSprite.getX(), ballSprite.getY(), 15/PPM, 15/PPM);
         this.body = ball;
-        this.body.setUserData(new BodyData(false,true,false,false));
+        this.body.setUserData(new BodyData(false,true,false,false,this.ballType==BallType.CUE,this.ballType));
         return ball;
     }
 }
